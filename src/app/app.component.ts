@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { FooterComponent } from "./shared/footer/footer.component";
+import { RouterOutlet } from "@angular/router";
+import { ThemeService } from './shared/theme.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [NavbarComponent, FooterComponent, RouterOutlet],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'personal-website';
+
+  constructor(private theme: ThemeService) {}
+
+  ngOnInit(): void {
+    this.theme.initTheme();
+  }
 }

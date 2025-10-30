@@ -1,0 +1,55 @@
+<div class="container relative max-w-3xl mx-auto px-20 py-20">
+  <h1 class="text-2xl font-medium">{{ text.title }}</h1>
+  <p class="py-3 w-full">
+    {{ text.intro }}
+  </p>
+
+  <div class="py-3 flex flex-col">
+    <span class="text-xl font-medium">{{ text.coreStackTitle }}</span>
+    <ul class="flex gap-4 items-center list-disc list-inside py-2">
+      @for (tech of text.coreStack; track tech) {
+        <li>{{ tech }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="py-3 flex flex-col">
+    <span class="text-xl font-medium">{{ text.toolsTitle }}</span>
+    <ul class="flex gap-4 items-center list-disc list-inside py-2">
+      @for (tool of text.tools; track tool) {
+        <li>{{ tool }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="py-10">
+    <h2 class="text-2xl font-medium mb-6">{{ text.faqsTitle }}</h2>
+
+    <div class="rounded-2xl border border-neutral-800">
+      <div class="divide-y ">
+        @for (item of faqs; track item; let i = $index) {
+          <div class="group">
+            <button (click)="toggle(i)" class="w-full flex items-center justify-between text-left px-6 py-5">
+              <span class="text-base font-medium">{{ item.question }}</span>
+              <span class="text-gray-600 transition-transform duration-500 ease-in-out" [class.rotate-180]="openIndex === i">
+                  <i class="uil uil-arrow-up text-2xl cursor-pointer "></i>
+              </span>
+            </button>
+            <div class="px-6 text-gray-700 overflow-hidden transition-all duration-500 ease-in-out"
+                 [style.maxHeight]="openIndex === i ? '200px' : '0'"
+                 [style.opacity]="openIndex === i ? 1 : 0"
+                 [class.pb-6]="openIndex === i">
+              {{ item.answer }}
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <p class="text-center text-sm text-neutral-400 mt-6">
+      {{ text.contactPrompt }}
+      <a routerLink="/contact" class="underline hover:text-neutral-200">{{ text.contactLinkText }}</a>
+    </p>
+  </div>
+
+</div>

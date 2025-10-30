@@ -1,0 +1,39 @@
+<div
+  class="flex items-center justify-between py-4 my-3 max-w-3xl mx-auto relative"
+>
+  <div class="flex items-center gap-2">
+    <div
+      class="flex items-center overflow-hidden w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer"
+    >
+      <img
+        src="/profile.jpg"
+        alt="profile picture"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <span class="text-xs font-medium">Gabriel Duah</span>
+  </div>
+  <nav class="">
+    <ul class="flex items-center gap-3 text-sm font-medium">
+      <li>
+        <a
+          routerLink="/home"
+          routerLinkActive="text-blue-600 border-b"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="text-blue-600 border-b"
+          >About</a
+        >
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="text-blue-600 border-b"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>

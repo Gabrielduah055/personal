@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Theme base inspired by betterstack.com aesthetics */
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  background-color: #ffffff;
+  color: #353535;
+}
+
+html.dark {
+  background-color: #0b0e14; /* deep charcoal */
+  color: #b5b5b5; /* light gray */
+}
+
+/* Utility helpers for containers */
+.card {
+  background-color: #ffffff;
+}
+
+.dark .card {
+  background-color: #111827; /* slate-900-ish */
+}
+
+/* Generic element tweaks */
+body, .container {
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+/* Form + component surfaces */
+.surface {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+}
+.dark .surface {
+  background-color: #0f131a;
+  border-color: #1f2937;
+}
+
+/* Inputs */
+input, textarea, select {
+  background-color: #ffffff;
+  color: #2a2d36;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.dark input, .dark textarea, .dark select {
+  background-color: #0f131a;
+  color: #b5b5b5;
+  border-color: #374151;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #000000;
+  color: #ffffff;
+}
+.dark .btn-primary {
+  background: #111827;
+  color: #e5e7eb;
+}

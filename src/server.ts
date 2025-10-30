@@ -4,6 +4,7 @@ import express from 'express';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import bootstrap from './main.server';
+import nodemailer from 'nodemailer';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -23,6 +24,40 @@ const commonEngine = new CommonEngine();
  * });
  * ```
  */
+
+app.use(express.json());
+
+/**
+ * Contact form endpoint: Receives name, telephone, message and sends an email
+ */
+app.post('/api/contact', async (req, res) => {
+  const { name, telephone, message } = req.body;
+  if (!name || !telephone || !message) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  // Use your own Gmail credentials or an app password
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'YOUR_GMAIL_ADDRESS', // TODO: replace with sender Gmail
+      pass: 'YOUR_GMAIL_PASSWORD_OR_APP_PASSWORD', // TODO: use app password if 2FA is enabled
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: 'YOUR_GMAIL_ADDRESS', // TODO: replace
+      to: 'gabriel.agyemanduah@st.vvu.edu.gh',
+      subject: `New Contact Form Submission from ${name}`,
+      text: `Name: ${name}\nTelephone: ${telephone}\nMessage: ${message}`,
+    });
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
 
 /**
  * Serve static files from /browser

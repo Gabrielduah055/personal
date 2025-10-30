@@ -1,0 +1,77 @@
+<div class="container py-4 my-3 max-w-3xl mx-auto relative">
+  <div
+    class="flex flex-col items-center justify-between border-b-2 border-gray-300 pb-4 gap-4 sm:gap-6 md:gap-6"
+  >
+    <div class="flex items-center justify-between w-full">
+      <div class="flex items-center gap-2">
+        <div
+          class="flex items-center overflow-hidden w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer"
+        >
+          <img
+            src="/profile.jpg"
+            alt="profile picture"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <span class="text-xs font-medium">Gabriel Duah</span>
+      </div>
+
+      <div class="flex items-center gap-2 text-2xl relative">
+        <!-- GitHub with tooltip -->
+        <div class="group relative">
+          <button>
+            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="cursor-pointer w-5 hover:scale-125 duration-200 hover:stroke-blue-500">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </button>
+          <span class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">GitHub</span>
+        </div>
+
+        <!-- Twitter with tooltip -->
+        <div class="group relative">
+          <button>
+            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="cursor-pointer w-5 hover:scale-125 duration-200 hover:stroke-blue-500">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </button>
+          <span class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">Twitter</span>
+        </div>
+
+        <!-- LinkedIn with tooltip -->
+        <div class="group relative">
+          <button>
+            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="cursor-pointer w-5 hover:scale-125 duration-200 hover:stroke-blue-500">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </button>
+          <span class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">LinkedIn</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex items-center justify-between sm:flex-col md:flex-col lg:flex-row my-2"
+  >
+    <div class="flex flex-col">
+      <span>© 2025 Gabriel Agyeman Duah. All rights reserved. </span>
+      <div class="flex gap-3">
+        <a
+          routerLink="/privacy-policy"
+          class="text-sm text-gray-600 font-medium"
+          >Privacy Policy</a
+        >
+      </div>
+    </div>
+    <div
+      class="toogle w-16 h-8 border flex items-center justify-between rounded-2xl p-2 cursor-pointer"
+      (click)="toggleTheme()"
+      title="Toggle theme"
+    >
+      <i class="uil uil-sun"></i>
+      <i class="uil uil-moon"></i>
+    </div>
+  </div>
+</div>
