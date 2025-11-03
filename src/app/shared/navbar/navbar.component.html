@@ -1,36 +1,92 @@
-<div
-  class="flex items-center justify-between py-4 my-3 max-w-3xl mx-auto relative"
->
-  <div class="flex items-center gap-2">
-    <div
-      class="flex items-center overflow-hidden w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer"
-    >
-      <img
-        src="/profile.jpg"
-        alt="profile picture"
-        class="w-full h-full object-cover"
-      />
+<div class=" shadow-sm">
+  <div
+    class="flex items-center justify-between py-4 my-3 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative"
+  >
+    <!-- Profile -->
+    <div class="flex items-center gap-3">
+      <div
+        class="flex items-center overflow-hidden w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer"
+      >
+        <img
+          src="/profile.jpg"
+          alt="profile picture"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <span class="text-sm font-medium text-gray-700">Gabriel Duah</span>
     </div>
 
-    <span class="text-xs font-medium">Gabriel Duah</span>
+    <!-- Desktop nav -->
+    <nav class="hidden md:block">
+      <ul class="flex items-center space-x-6 text-sm font-medium text-gray-700">
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="text-blue-600 border-b-2 border-blue-600 pb-1"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="text-blue-600 border-b-2 border-blue-600 pb-1"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/contact"
+            routerLinkActive="text-blue-600 border-b-2 border-blue-600 pb-1"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 focus:outline-none"
+      aria-label="Toggle menu"
+      (click)="toggleMenu()"
+    >
+      <i class="uil uil-bars text-xl"></i>
+    </button>
   </div>
-  <nav class="">
-    <ul class="flex items-center gap-3 text-sm font-medium">
+
+  <!-- Mobile dropdown -->
+  <nav
+    class="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
+    [ngClass]="{
+      'max-h-60 opacity-100 visible': isMenuOpen,
+      'max-h-0 opacity-0 invisible': !isMenuOpen
+    }"
+  >
+    <ul
+      class="bg-white rounded-lg shadow-md py-3 px-6 flex flex-col gap-3 text-sm font-medium text-gray-700"
+    >
       <li>
         <a
           routerLink="/home"
-          routerLinkActive="text-blue-600 border-b"
+          routerLinkActive="text-blue-600"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()"
           >Home</a
         >
       </li>
       <li>
-        <a routerLink="/about" routerLinkActive="text-blue-600 border-b"
+        <a
+          routerLink="/about"
+          routerLinkActive="text-blue-600"
+          (click)="closeMenu()"
           >About</a
         >
       </li>
       <li>
-        <a routerLink="/contact" routerLinkActive="text-blue-600 border-b"
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-blue-600"
+          (click)="closeMenu()"
           >Contact</a
         >
       </li>

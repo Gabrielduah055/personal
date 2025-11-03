@@ -1,0 +1,19 @@
+/* Mobile dropdown slide animation */
+.menu {
+  transition: max-height 250ms ease, opacity 250ms ease, transform 250ms ease;
+  overflow: hidden;
+}
+
+.menu-closed {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.menu-open {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
