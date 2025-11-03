@@ -61,7 +61,7 @@ export const TEXT = {
   },
 
   policy: {
-    lastUpdated: '24.08.2025',
+    lastUpdated: '03.11.2025',
     title: 'Privacy Policy',
     intro:
       'This Privacy Policy explains how the personal data you share with me through the contact form on my website is collected, used, and protected.',
