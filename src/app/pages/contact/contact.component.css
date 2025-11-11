@@ -9,33 +9,45 @@
   z-index: 1000;
 }
 
+html.dark .modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 /* Modal content */
 .modal-content {
-  background: #ffffff;
+  background: var(--surface);
   border-radius: 12px;
   padding: 24px 28px;
   width: 90%;
   max-width: 380px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px var(--shadow-lg);
   animation: modalIn 200ms ease-out;
+  border: 1px solid var(--border-primary);
 }
 
 .modal-title {
   margin: 10px 0 4px;
   font-size: 20px;
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 .modal-subtitle {
   margin: 0;
   font-size: 14px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 @keyframes modalIn {
-  from { transform: translateY(10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Checkmark animation */
@@ -56,8 +68,14 @@
 }
 
 @keyframes circleIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .checkmark__stem {
@@ -74,7 +92,9 @@
 }
 
 @keyframes stemDraw {
-  to { transform: rotate(45deg) scaleY(1); }
+  to {
+    transform: rotate(45deg) scaleY(1);
+  }
 }
 
 .checkmark__kick {
@@ -91,9 +111,7 @@
 }
 
 @keyframes kickDraw {
-  to { transform: rotate(-45deg) scaleY(1); }
+  to {
+    transform: rotate(-45deg) scaleY(1);
+  }
 }
-
-
-
-

@@ -3,60 +3,151 @@
 /* Theme base inspired by betterstack.com aesthetics */
 :root {
   color-scheme: light dark;
-}
-
-html {
-  background-color: #ffffff;
-  color: #353535;
+  
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --surface: #ffffff;
+  --surface-hover: #f9fafb;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
 }
 
 html.dark {
-  background-color: #0b0e14; /* deep charcoal */
-  color: #b5b5b5; /* light gray */
+  /* Dark theme colors */
+  --bg-primary: #0b0e14;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-primary: #374151;
+  --border-secondary: #4b5563;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --surface: #111827;
+  --surface-hover: #1f2937;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.4);
 }
 
-/* Utility helpers for containers */
-.card {
-  background-color: #ffffff;
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 250ms ease, color 250ms ease;
 }
 
-.dark .card {
-  background-color: #111827; /* slate-900-ish */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+/* Utility classes for consistent theming */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.border-primary {
+  border-color: var(--border-primary);
+}
+
+.border-secondary {
+  border-color: var(--border-secondary);
 }
 
 /* Generic element tweaks */
-body, .container {
+.container {
   transition: background-color 250ms ease, color 250ms ease;
 }
 
 /* Form + component surfaces */
 .surface {
-  background-color: #ffffff;
-  border-color: #e5e7eb;
+  background-color: var(--surface);
+  border-color: var(--border-primary);
+  transition: background-color 200ms ease, border-color 200ms ease;
 }
-.dark .surface {
-  background-color: #0f131a;
-  border-color: #1f2937;
+
+.surface:hover {
+  background-color: var(--surface-hover);
 }
 
 /* Inputs */
 input, textarea, select {
-  background-color: #ffffff;
-  color: #2a2d36;
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
-.dark input, .dark textarea, .dark select {
-  background-color: #0f131a;
-  color: #b5b5b5;
-  border-color: #374151;
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+html.dark input:focus, 
+html.dark textarea:focus, 
+html.dark select:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 /* Buttons */
 .btn-primary {
-  background: #000000;
-  color: #ffffff;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  transition: background-color 200ms ease, color 200ms ease;
 }
-.dark .btn-primary {
-  background: #111827;
-  color: #e5e7eb;
+
+.btn-primary:hover {
+  background: var(--text-secondary);
+}
+
+html.dark .btn-primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+html.dark .btn-primary:hover {
+  background: var(--text-tertiary);
+}
+
+/* Card component */
+.card {
+  background-color: var(--surface);
+  border-color: var(--border-primary);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+html.dark .card {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-primary);
 }

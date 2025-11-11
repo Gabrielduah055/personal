@@ -1,14 +1,14 @@
 <div class="container relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-  <h1 class="text-2xl sm:text-3xl font-semibold text-gray-900">{{ text.title }}</h1>
+  <h1 class="text-2xl sm:text-3xl font-semibold text-primary">{{ text.title }}</h1>
 
-  <p class="mt-3 text-gray-700 leading-relaxed">
+  <p class="mt-3 text-secondary leading-relaxed">
     {{ text.intro }}
   </p>
 
   <!-- Core Stack -->
   <div class="mt-8">
-    <span class="text-xl font-medium text-gray-900">{{ text.coreStackTitle }}</span>
-    <ul class="flex flex-wrap gap-x-5 gap-y-2 list-disc list-inside mt-3 text-gray-700">
+    <span class="text-xl font-medium text-primary">{{ text.coreStackTitle }}</span>
+    <ul class="flex flex-wrap gap-x-5 gap-y-2 list-disc list-inside mt-3 text-secondary">
       @for (tech of text.coreStack; track tech) {
         <li>{{ tech }}</li>
       }
@@ -17,8 +17,8 @@
 
   <!-- Tools -->
   <div class="mt-8">
-    <span class="text-xl font-medium text-gray-900">{{ text.toolsTitle }}</span>
-    <ul class="flex flex-wrap gap-x-5 gap-y-2 list-disc list-inside mt-3 text-gray-700">
+    <span class="text-xl font-medium text-primary">{{ text.toolsTitle }}</span>
+    <ul class="flex flex-wrap gap-x-5 gap-y-2 list-disc list-inside mt-3 text-secondary">
       @for (tool of text.tools; track tool) {
         <li>{{ tool }}</li>
       }
@@ -27,18 +27,18 @@
 
   <!-- FAQs -->
   <div class="mt-12">
-    <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-gray-900">{{ text.faqsTitle }}</h2>
+    <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-primary">{{ text.faqsTitle }}</h2>
 
-    <div class="rounded-2xl border border-gray-300 bg-white shadow-sm divide-y">
+    <div class="rounded-2xl border border-primary bg-surface shadow-sm divide-y divide-primary">
       @for (item of faqs; track item; let i = $index) {
         <div class="group">
           <button
             (click)="toggle(i)"
-            class="w-full flex items-center justify-between text-left px-6 py-5 hover:bg-gray-50 transition-colors"
+            class="w-full flex items-center justify-between text-left px-6 py-5 hover:bg-secondary transition-colors"
           >
-            <span class="text-base font-medium text-gray-800">{{ item.question }}</span>
+            <span class="text-base font-medium text-primary">{{ item.question }}</span>
             <span
-              class="text-gray-500 transition-transform duration-300 ease-in-out"
+              class="text-tertiary transition-transform duration-300 ease-in-out"
               [class.rotate-180]="openIndex === i"
             >
               <i class="uil uil-arrow-up text-xl"></i>
@@ -46,7 +46,7 @@
           </button>
 
           <div
-            class="px-6 text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+            class="px-6 text-secondary overflow-hidden transition-all duration-300 ease-in-out"
             [style.maxHeight]="openIndex === i ? '200px' : '0'"
             [style.opacity]="openIndex === i ? 1 : 0"
             [class.pb-5]="openIndex === i"
@@ -57,9 +57,9 @@
       }
     </div>
 
-    <p class="text-center text-sm text-gray-500 mt-8">
+    <p class="text-center text-sm text-tertiary mt-8">
       {{ text.contactPrompt }}
-      <a routerLink="/contact" class="underline text-blue-600 hover:text-blue-500">
+      <a routerLink="/contact" class="underline text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300">
         {{ text.contactLinkText }}
       </a>
     </p>

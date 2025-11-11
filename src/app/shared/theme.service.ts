@@ -19,9 +19,24 @@ export class ThemeService {
       return;
     }
 
+    // Check if theme class is already set (from inline script)
+    const htmlElement = document.documentElement;
+    const hasDarkClass = htmlElement.classList.contains('dark');
+    
+    // Get saved theme or detect from class or system preference
     const saved = (localStorage.getItem(this.storageKey) as ThemeMode | null);
     const prefersDark = window.matchMedia?.(this.mediaQuery).matches ?? false;
-    const initial: ThemeMode = saved ?? (prefersDark ? 'dark' : 'light');
+    
+    // Use saved preference, or current class state, or system preference
+    let initial: ThemeMode;
+    if (saved) {
+      initial = saved;
+    } else if (hasDarkClass) {
+      initial = 'dark';
+    } else {
+      initial = prefersDark ? 'dark' : 'light';
+    }
+    
     this.applyTheme(initial);
   }
 

@@ -13,9 +13,15 @@ import { ThemeService } from './shared/theme.service';
 export class AppComponent implements OnInit {
   title = 'personal-website';
 
-  constructor(private theme: ThemeService) {}
+  constructor(private theme: ThemeService) {
+    // Initialize theme in constructor to ensure it runs before view initialization
+    this.theme.initTheme();
+  }
 
   ngOnInit(): void {
-    this.theme.initTheme();
+    // Ensure theme is applied (in case constructor didn't run in browser context)
+    if (typeof window !== 'undefined') {
+      this.theme.initTheme();
+    }
   }
 }
