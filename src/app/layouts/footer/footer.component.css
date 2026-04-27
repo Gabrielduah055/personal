@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.footer-social {
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  color: #4b5563;
+  display: inline-flex;
+  font-size: 18px;
+  height: 38px;
+  justify-content: center;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+  width: 38px;
+}
+
+.footer-social:hover {
+  background: #022c22;
+  border-color: #022c22;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-peerlist {
+  align-items: center;
+  background: #00aa45;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 900;
+  height: 24px;
+  justify-content: center;
+  line-height: 1;
+  width: 24px;
+}
+
+.footer-social:hover .footer-peerlist {
+  background: #fff;
+  color: #022c22;
+}
