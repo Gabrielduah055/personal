@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.detail-preview {
+  --preview-height: 520px;
+  height: var(--preview-height);
+}
+
+.detail-preview-image {
+  transform: translateY(0) scale(1.005);
+  transform-origin: top center;
+  transition: transform 7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.detail-preview:hover .detail-preview-image {
+  transform: translateY(calc(var(--preview-height) - 100%)) scale(1.005);
+}
+
+@media (max-width: 767px) {
+  .detail-preview {
+    --preview-height: 360px;
+  }
+}

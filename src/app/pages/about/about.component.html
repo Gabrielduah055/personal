@@ -1,0 +1,159 @@
+<div class="bg-white text-black">
+  <section class="about-hero relative overflow-hidden pb-20 pt-8">
+    <div class="absolute inset-0">
+      <div class="about-glow about-glow-one"></div>
+      <div class="about-glow about-glow-two"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-[1290px] px-6 sm:px-10">
+      <a routerLink="/" class="mb-12 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 transition-colors hover:text-black">
+        <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back Home
+      </a>
+
+      <div class="grid items-end gap-12 lg:grid-cols-[minmax(0,1fr)_430px]">
+        <div>
+          <div class="mb-7 flex flex-wrap gap-2">
+            <span class="rounded-full border border-gray-200 bg-white/70 px-3 py-1.5 text-[12px] text-gray-600">Full-Stack Developer</span>
+            <span class="rounded-full border border-gray-200 bg-white/70 px-3 py-1.5 text-[12px] text-gray-600">Product Interfaces</span>
+            <span class="rounded-full border border-gray-200 bg-white/70 px-3 py-1.5 text-[12px] text-gray-600">Freelance Ready</span>
+          </div>
+
+          <h1 class="max-w-[820px] text-[44px] font-semibold leading-[0.96] tracking-[-0.03em] text-black sm:text-[64px] lg:text-[78px]">
+            I build digital products that feel clear, useful, and ready for real people.
+          </h1>
+
+          <p class="mt-8 max-w-[680px] text-sm leading-7 text-gray-600">
+            This is the first design pass for the About page. The structure is ready for your real story, background,
+            values, process, and the kind of work you want clients to hire you for.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="mailto:gabriel@example.com" class="inline-flex h-12 w-fit items-center gap-2 rounded-[4px] bg-emerald-950 px-6 text-[13px] font-semibold text-white shadow-[0_10px_22px_rgba(2,44,34,0.16)] transition-colors hover:bg-emerald-900">
+              Start a Conversation
+              <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M9 7h8v8"></path>
+              </svg>
+            </a>
+            <a routerLink="/" fragment="projects" class="inline-flex h-12 w-fit items-center rounded-[4px] border border-gray-200 bg-white px-6 text-[13px] font-semibold text-gray-800 transition-colors hover:border-gray-900">
+              View Projects
+            </a>
+          </div>
+        </div>
+
+        <aside class="rounded-lg border border-gray-200 bg-white/80 p-5 shadow-[0_24px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+          <div class="profile-panel mb-5 flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md">
+            <div class="profile-link flex h-28 w-28 items-center justify-center rounded-full border border-black/10 text-3xl font-black text-white shadow-lg">
+              GD
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-md bg-gray-50 p-4">
+              <p class="text-[11px] uppercase tracking-[0.14em] text-gray-400">Focus</p>
+              <p class="mt-2 text-sm font-semibold text-black">Web Apps</p>
+            </div>
+            <div class="rounded-md bg-gray-50 p-4">
+              <p class="text-[11px] uppercase tracking-[0.14em] text-gray-400">Base</p>
+              <p class="mt-2 text-sm font-semibold text-black">Accra, Ghana</p>
+            </div>
+            <div class="rounded-md bg-gray-50 p-4">
+              <p class="text-[11px] uppercase tracking-[0.14em] text-gray-400">Stack</p>
+              <p class="mt-2 text-sm font-semibold text-black">React / Angular</p>
+            </div>
+            <div class="rounded-md bg-gray-50 p-4">
+              <p class="text-[11px] uppercase tracking-[0.14em] text-gray-400">Mode</p>
+              <p class="mt-2 text-sm font-semibold text-black">Freelance</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="mx-auto grid max-w-[1290px] gap-10 px-6 sm:px-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div class="space-y-12">
+        <section class="about-card">
+          <p class="section-label">How I Work</p>
+          <h2>I care about building things that make sense before they look impressive.</h2>
+          <p>
+            The real content will go here, but the page is shaped around a simple idea: clear thinking, clean interfaces,
+            and practical systems that help people complete important tasks without friction.
+          </p>
+        </section>
+
+        <section class="grid gap-5 md:grid-cols-3">
+          <article class="about-mini-card" *ngFor="let highlight of highlights">
+            <span class="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-emerald-950">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </span>
+            <h3>{{ highlight }}</h3>
+            <p>A focused area of work that can become more personal once we add your final content.</p>
+          </article>
+        </section>
+
+        <section class="about-card">
+          <p class="section-label">Selected Work</p>
+          <div class="grid gap-4 md:grid-cols-3">
+            <a routerLink="/project/1" class="project-tile">
+              <span>01</span>
+              <strong>HealthPulse</strong>
+              <small>Health content and commerce</small>
+            </a>
+            <a routerLink="/project/2" class="project-tile">
+              <span>02</span>
+              <strong>Cindy E-Commerce</strong>
+              <small>Handmade footwear shop</small>
+            </a>
+            <a routerLink="/project/3" class="project-tile">
+              <span>03</span>
+              <strong>Magee Beauty Parlour</strong>
+              <small>Salon booking system</small>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="space-y-8">
+        <section class="about-side-card">
+          <p class="section-label">Toolbox</p>
+          <div class="space-y-6">
+            <div>
+              <h3>Technical</h3>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span *ngFor="let skill of skills.technical">{{ skill }}</span>
+              </div>
+            </div>
+            <div>
+              <h3>Product</h3>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span *ngFor="let skill of skills.product">{{ skill }}</span>
+              </div>
+            </div>
+            <div>
+              <h3>Tools</h3>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span *ngFor="let skill of skills.tools">{{ skill }}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-side-card">
+          <p class="section-label">Contact</p>
+          <div class="space-y-4">
+            <div *ngFor="let item of contactItems">
+              <p class="text-[11px] uppercase tracking-[0.14em] text-gray-400">{{ item.label }}</p>
+              <p class="mt-1 text-sm font-semibold text-black">{{ item.value }}</p>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </section>
+</div>

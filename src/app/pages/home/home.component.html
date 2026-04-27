@@ -1,0 +1,94 @@
+<!-- Hero Section -->
+<section class="relative min-h-[560px] overflow-hidden py-16 sm:py-20">
+  <video class="hero-video absolute inset-0 h-full w-full" autoplay muted loop playsinline preload="metadata">
+    <source src="assets/videos/hero-background.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-video-glow absolute inset-0"></div>
+  <div class="hero-video-veil absolute inset-0"></div>
+  <div class="hero-video-fade absolute inset-0"></div>
+
+  <div class="relative z-10 mx-auto max-w-[1290px] px-6 sm:px-10">
+    <div class="max-w-[720px]">
+      <!-- Badge -->
+      <div @fadeInUp class="mb-7">
+        <span class="inline-flex rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-950">
+        AVAILABLE FOR FREELANCE
+      </span>
+    </div>
+
+      <!-- Main Heading -->
+      <h1 @fadeInUp class="mb-8 max-w-[690px] text-[42px] font-bold leading-[0.96] text-black sm:text-[56px] md:text-[64px]">
+        I build real-world web applications that solve business problems.
+      </h1>
+
+      <!-- Subtitle -->
+      <p @fadeInUp class="mb-11 max-w-[690px] text-[13px] leading-6 text-gray-600 sm:text-sm">
+        I specialize in building digital interfaces that balance minimalist aesthetics with robust technical foundations.
+        <br class="hidden sm:block" />
+        Currently working with React, Angular, Node.js, and scalable backend systems.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div @fadeInUp class="flex flex-col gap-5 sm:flex-row sm:items-center">
+        <a
+          href="#projects"
+          class="inline-flex h-14 w-fit items-center gap-2 rounded-[4px] bg-emerald-950 px-7 text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(2,44,34,0.18)] transition-colors hover:bg-emerald-900"
+        >
+          View Projects
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M9 7h8v8"></path>
+          </svg>
+        </a>
+        <a
+          href="mailto:gabriel@example.com"
+          class="inline-flex w-fit items-center gap-2 text-[13px] font-medium text-gray-500 transition-colors hover:text-emerald-950"
+        >
+          Get in touch
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="overflow-hidden border-y border-gray-200 bg-white py-8">
+  <div class="stack-marquee flex w-max items-center">
+    <div class="flex items-center gap-10 pr-10" *ngFor="let repeat of [0, 1]">
+      <span *ngFor="let tech of technologies" class="stack-item">
+        {{ tech }}
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Selected Projects -->
+<section id="projects" class="py-20">
+  <div class="mx-auto max-w-[1290px] px-6 sm:px-10">
+    <!-- Section Header -->
+    <div class="mb-12 border-b border-gray-200 pb-5">
+      <h2 class="text-[28px] font-semibold leading-none text-black sm:text-[32px]">Selected Projects</h2>
+      <div class="mt-3 h-[3px] w-12 bg-black"></div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div @staggerChildren class="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+      <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="px-4 py-20 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-4xl rounded-lg border border-gray-900 bg-gray-900 px-8 py-16 text-center">
+    <h2 class="mb-4 text-4xl font-bold text-white">Let's build something exceptional.</h2>
+    <p class="mb-8 text-gray-300">
+      Currently accepting new projects for Q3 2024. If you have a vision for a premium digital product, I'd love to help realize it.
+    </p>
+    <a href="mailto:gabriel@example.com" class="inline-block rounded border border-white bg-white px-8 py-3 font-semibold text-gray-900 transition-colors hover:bg-gray-100">
+      Start a Conversation
+    </a>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.project-preview {
+  --preview-height: 14rem;
+}
+
+.project-preview-image {
+  transform: translateY(0) scale(1.01);
+  transform-origin: top center;
+  transition: transform 4.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-preview:hover .project-preview-image {
+  transform: translateY(calc(var(--preview-height) - 100%)) scale(1.01);
+}

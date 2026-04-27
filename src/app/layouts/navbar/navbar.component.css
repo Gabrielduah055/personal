@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.profile-link {
+  background:
+    radial-gradient(circle at 65% 30%, rgba(23, 204, 189, 0.95), transparent 26%),
+    radial-gradient(circle at 35% 70%, rgba(0, 63, 53, 0.95), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #06372f 48%, #111827 100%);
+}
