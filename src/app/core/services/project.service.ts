@@ -384,6 +384,116 @@ export class ProjectService {
           ]
         }
       ]
+    },
+    {
+      id: '4',
+      title: 'Physiotherapy Hospital Website',
+      shortDescription: 'A specialised physiotherapy hospital website for appointment booking, services, recovery process, and patient trust.',
+      description: 'This physiotherapy hospital website is a polished healthcare landing experience for a specialised clinic focused on recovery, rehabilitation, pain management, and movement support. The site presents the clinic’s services, communicates trust, explains the recovery process, and gives patients a clear path to book an appointment.',
+      image: '/assets/projects/physiotherapy.png?v=1',
+      technologies: ['React', 'Responsive Design', 'Healthcare UI', 'Appointment Form'],
+      livePreview: 'https://physiotherapy-website-nine.vercel.app/',
+      gitHub: 'https://github.com/Gabrielduah055/physiotherapy-website',
+      challenges: 'The main challenge was designing a healthcare website that feels professional and reassuring while still being modern and visually memorable. The page needed to communicate medical trust, show physiotherapy services clearly, and make appointment booking easy without overwhelming visitors.',
+      solution: 'I designed a focused React website with a strong hero section, appointment form, service cards, clinic trust signals, recovery process content, patient review section, and a calm green visual system. The layout guides visitors from first impression to service discovery and finally toward booking a consultation.',
+      features: [
+        'Appointment Booking Form',
+        'Physiotherapy Service Cards',
+        'Recovery Process Flow'
+      ],
+      techStack: {
+        frontend: ['React', 'JavaScript', 'Responsive UI'],
+        backend: ['Form-ready Structure'],
+        database: 'Not required for landing version',
+        other: ['Healthcare UX', 'Service Landing Page', 'Vercel Deployment']
+      },
+      targetUsers: ['Physiotherapy Patients', 'Hospital Visitors', 'Rehabilitation Clients'],
+      stats: {
+        performance: 'Landing Ready',
+        dataLatency: 'Static Fast',
+        liveStatus: 'Operational'
+      },
+      detailSections: [
+        {
+          title: 'Project Context',
+          items: [
+            'Built for a specialised hospital website focused on physiotherapy care.',
+            'The site communicates recovery, rehabilitation, manual therapy, pain management, and guided support.',
+            'The design needed to feel trustworthy, calm, professional, and easy for patients to understand.'
+          ]
+        },
+        {
+          title: 'Patient Journey',
+          items: [
+            'Visitors land on a clear hero message centered on recovery: Recover, Rebuild, Rise Again.',
+            'A visible appointment form helps patients take action immediately.',
+            'Service cards explain the major physiotherapy offerings without making the page feel clinical or crowded.',
+            'Trust indicators, testimonials, and process sections help patients feel more confident before booking.'
+          ]
+        },
+        {
+          title: 'Core Sections',
+          items: [
+            'Hero section with appointment form and healthcare-focused visual treatment.',
+            'Physiotherapy services section covering manual therapy, injury rehabilitation, and pain management.',
+            'About/value section explaining expert physiotherapy for a healthier, pain-free life.',
+            'Three-step recovery process showing assessment, treatment plan, and continuous support.',
+            'Patient testimonial and footer with contact, links, and newsletter subscription.'
+          ]
+        },
+        {
+          title: 'Design Approach',
+          items: [
+            'Used a deep green healthcare palette to create a calm, restorative, and trustworthy feel.',
+            'Balanced large typography with soft image sections to make the page feel premium but approachable.',
+            'Created strong spacing between sections so visitors can scan information without fatigue.',
+            'Used repeated service and process cards for consistency and easy comprehension.'
+          ]
+        },
+        {
+          title: 'Technical Approach',
+          items: [
+            'Built with React and reusable section-based components.',
+            'Structured as a responsive landing page that adapts across mobile, tablet, and desktop viewports.',
+            'Deployed on Vercel for fast access and simple production hosting.',
+            'Prepared the appointment form layout so it can later connect to email, dashboard, or database workflows.'
+          ]
+        },
+        {
+          title: 'Outcome',
+          items: [
+            'The website gives the physiotherapy clinic a strong online presence with a clear service story.',
+            'Patients can quickly understand what the hospital specialises in and how the recovery process works.',
+            'The design creates a professional foundation for future booking management and patient communication features.'
+          ]
+        }
+      ],
+      plannedFeatures: [
+        {
+          title: 'Booking Improvements',
+          items: [
+            'Connect appointment form submissions to email or a clinic dashboard.',
+            'Add appointment status tracking for pending, confirmed, and completed bookings.',
+            'Add calendar availability for selecting open consultation slots.'
+          ]
+        },
+        {
+          title: 'Patient Experience',
+          items: [
+            'Add detailed service pages for each physiotherapy treatment.',
+            'Add FAQs about recovery, treatment duration, and appointment preparation.',
+            'Add patient education articles about injury prevention and rehabilitation.'
+          ]
+        },
+        {
+          title: 'Clinic Operations',
+          items: [
+            'Add admin tools for managing enquiries and appointment requests.',
+            'Add contact notifications for new patient form submissions.',
+            'Add analytics to track service interest and appointment conversion.'
+          ]
+        }
+      ]
     }
   ];
 
