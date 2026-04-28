@@ -18,6 +18,10 @@ export interface Project {
   technologies: string[];
   livePreview: string;
   gitHub: string;
+  previewCredentials?: {
+    email: string;
+    password: string;
+  };
   challenges: string;
   solution: string;
   features: string[];

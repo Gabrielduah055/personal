@@ -168,6 +168,198 @@ export class ProjectService {
       ]
     },
     {
+      id: '5',
+      title: 'HealthPulse Admin Dashboard',
+      shortDescription: 'A full-featured Angular 19 admin dashboard for managing HealthPulse blogs, products, orders, customers, and comments.',
+      description: 'HealthPulse Admin Dashboard is the administrator control center for the HealthPulse men\'s health platform. Built with Angular 19 standalone components and Tailwind CSS v4, it gives admins a clean responsive workspace for publishing blog content, managing products, reviewing orders, moderating comments, and tracking platform activity.',
+      image: '/assets/projects/healthpulse-admin-dashboard.png?v=1',
+      technologies: ['Angular 19', 'TypeScript 5.7', 'Tailwind CSS v4', 'RxJS'],
+      livePreview: 'https://men-health-frontend-r2ng.vercel.app',
+      gitHub: 'https://github.com/Gabrielduah055/mensHealthFrontend',
+      previewCredentials: {
+        email: 'admin@example.com',
+        password: 'password123'
+      },
+      challenges: 'The admin app needed to centralize many operational workflows, including content publishing, Cloudinary image uploads, product inventory, order status transitions, customer views, and comment moderation, while keeping every protected route secure behind an admin-only JWT session.',
+      solution: 'I built a standalone Angular admin interface with guarded dashboard routes, a functional HTTP interceptor for Bearer tokens, focused service classes for each domain area, reusable management pages, and a responsive Tailwind interface that keeps high-volume admin tasks easy to scan and act on.',
+      features: [
+        'Protected Admin Dashboard',
+        'Content & Product Management',
+        'Order and Comment Control'
+      ],
+      techStack: {
+        frontend: ['Angular 19', 'Standalone Components', 'TypeScript 5.7', 'Tailwind CSS v4'],
+        backend: ['RESTful API', 'JWT Authentication', 'Angular HttpClient'],
+        database: 'Backend-managed data API',
+        other: ['ngx-quill', 'quill-blot-formatter', 'RxJS BehaviorSubject', 'sessionStorage Auth']
+      },
+      targetUsers: ['Platform Administrators', 'Content Editors', 'Operations Teams'],
+      stats: {
+        performance: 'SPA Build',
+        dataLatency: 'API Driven',
+        liveStatus: 'Operational'
+      },
+      detailSections: [
+        {
+          title: 'Dashboard',
+          items: [
+            'Stats overview for total blogs, products, orders, customers, and revenue.',
+            'Quick-access cards route admins directly to blog creation, product creation, and comment moderation.',
+            'Recent blog posts, comments, products, orders, revenue analytics, and social media stats are presented in one responsive overview.'
+          ]
+        },
+        {
+          title: 'Authentication',
+          items: [
+            'Admin-only login flow backed by JWT authentication.',
+            'Admin session and token are stored in sessionStorage as adminUser.',
+            'AuthService manages login, logout, token access, and BehaviorSubject-based admin state.',
+            'Demo admin access: admin@example.com / password123.'
+          ]
+        },
+        {
+          title: 'Security Layer',
+          items: [
+            'Protected dashboard routes use an authGuard CanActivateFn.',
+            'Unauthenticated users are redirected to /admin/login.',
+            'A functional HTTP interceptor automatically attaches Authorization: Bearer token to outgoing API requests.',
+            'Logout clears the session and returns the admin to the login screen.'
+          ]
+        },
+        {
+          title: 'Blog Management',
+          items: [
+            'Admins can list all posts, including drafts, with status, category, date, comments, and view count.',
+            'Create and edit forms support Quill rich text, cover image upload, excerpt, tags, topics, sections, quotes, gallery images, read time, featured labels, and comments toggle.',
+            'Posts can be deleted, published, or moved back to draft status.',
+            'Cover images and gallery assets are uploaded through the backend multipart Cloudinary endpoint.'
+          ]
+        },
+        {
+          title: 'Product Management',
+          items: [
+            'Product listing shows name, price, stock quantity, active status, and image preview.',
+            'Admins can add, edit, view details, delete products, and upload up to four images.',
+            'Active and inactive controls determine product visibility on the public shop.',
+            'Product forms include name, slug, description, price, stock quantity, and gallery image handling.'
+          ]
+        },
+        {
+          title: 'Orders & Customers',
+          items: [
+            'Order list shows customer name, total, status, payment reference, and order date.',
+            'Order detail pages show line items, customer contact details, delivery address, payment status, and timestamps.',
+            'Admins can transition orders through pending, paid, processing, and delivered states.',
+            'Customer pages derive registered users from order data and show contact details with order history.'
+          ]
+        },
+        {
+          title: 'Comment Moderation',
+          items: [
+            'Moderation view lists pending and approved comments across blog posts.',
+            'Admins can approve comments so they become visible on the public site.',
+            'Admin replies notify the original commenter by email through the backend.',
+            'Inappropriate comments can be permanently deleted.'
+          ]
+        },
+        {
+          title: 'Routes & Pages',
+          items: [
+            '/admin/login handles unauthenticated admin access.',
+            '/dashboard, /blogs, /products, /orders, /customers, /comments, /links, and /logout are protected routes.',
+            'Create, edit, detail, and list pages are organized under feature folders for blogs, products, orders, and customers.',
+            'All protected routes render inside AdminLayoutComponent with sidebar navigation and a top bar shell.'
+          ]
+        },
+        {
+          title: 'Services & API',
+          items: [
+            'Backend API: https://menhealthbackend.onrender.com/api.',
+            'Public frontend: https://men-health-mu.vercel.app.',
+            'AuthService, BlogService, ProductService, OrderService, CustomerService, and DashboardService are provided as root singletons.',
+            'Environment files configure the API URL for development and production.'
+          ]
+        },
+        {
+          title: 'Build & Deployment',
+          items: [
+            'Angular CLI builds the production SPA into dist/mens-health-frontend/browser.',
+            'The app can run locally with npm start or ng serve on http://localhost:4200.',
+            'The static build is deployable to Vercel, Netlify, Firebase Hosting, or any static host with SPA fallback to index.html.',
+            'Karma and Jasmine support unit testing, with spec files placed beside components or services.'
+          ]
+        }
+      ],
+      plannedFeatures: [
+        {
+          title: 'Analytics',
+          items: [
+            'Charts for orders over time, revenue trends, and top-performing blog posts.',
+            'Real-time stats through WebSocket updates for orders and comments.',
+            'CSV or PDF exports for orders, customers, and blog reports.',
+            'Date range filtering for dashboard metrics.'
+          ]
+        },
+        {
+          title: 'Content Tools',
+          items: [
+            'Scheduled publishing with future publishedAt support.',
+            'Live post preview before publishing.',
+            'Revision history with restore support.',
+            'Bulk publish, draft, and delete actions.',
+            'SEO fields for meta title, meta description, and Open Graph image.'
+          ]
+        },
+        {
+          title: 'Commerce Tools',
+          items: [
+            'Inventory alerts when stock drops below a configurable threshold.',
+            'CSV product imports and product variants.',
+            'Promo codes with percentage or fixed discounts.',
+            'Related products for cross-selling.',
+            'Refund tracking through Paystack API.'
+          ]
+        },
+        {
+          title: 'Operations',
+          items: [
+            'Order confirmation emails triggered from the admin panel.',
+            'Internal admin notes on orders.',
+            'Customer profiles with total spend and account status.',
+            'Customer segmentation by spend, location, or registration date.'
+          ]
+        },
+        {
+          title: 'Moderation',
+          items: [
+            'Bulk approval and deletion for comments.',
+            'Spam filter dashboard for auto-flagged comments.',
+            'Comment search by keyword, commenter name, or post title.',
+            'Saved reply templates for common admin responses.'
+          ]
+        },
+        {
+          title: 'Security',
+          items: [
+            'Role-based access control for Super Admin, Editor, and Support roles.',
+            'Admin audit log for create, update, and delete actions.',
+            'Two-factor authentication using TOTP.',
+            'Session timeout and IP allowlist support.'
+          ]
+        },
+        {
+          title: 'Experience',
+          items: [
+            'Dark mode with system preference and manual override.',
+            'Notifications panel for new orders, pending comments, and low stock alerts.',
+            'Keyboard shortcuts for power-user admin actions.',
+            'Drag-and-drop ordering for blog sections, product images, and gallery items.',
+            'Offline detection and graceful retry states.'
+          ]
+        }
+      ]
+    },
+    {
       id: '2',
       title: 'Cindy E-Commerce',
       shortDescription: 'A React e-commerce storefront for a friend who handmakes Ghana-made shoes, slippers, and sandals.',
