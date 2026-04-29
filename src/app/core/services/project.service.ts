@@ -8,6 +8,149 @@ import { Project } from '@models/project.model';
 export class ProjectService {
   private projects: Project[] = [
     {
+      id: '6',
+      title: 'Bankar Logistics',
+      shortDescription: 'A premium Angular logistics website for local town delivery, package tracking, dispatch services, locations, reviews, and contact enquiries.',
+      description: 'Bankar Logistics is a polished delivery service website built for a local business that mainly operates within town. The project started from a shipping and logistics visual reference, then evolved into a cleaner local delivery experience with a full-width white layout, a refined navbar, a strong hero section, town delivery service cards, package tracking, service pages, location coverage, reviews, contact flow, and a shared footer across every route.',
+      image: '/assets/projects/bankar-logistics.png?v=1',
+      technologies: ['Angular', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      livePreview: 'https://bankar-logistics.vercel.app',
+      gitHub: 'https://github.com/Gabrielduah055/bankar-logistics',
+      challenges: 'The main challenge was turning an international cargo-style reference into a website that still felt premium, but made sense for a local town delivery business. The design also needed to avoid looking like a boxed demo, keep a bright white background, support multiple routed pages, and stay simple enough for a client presentation.',
+      solution: 'I rebuilt the experience around a full-screen website layout with lighter typography, better line height, orange brand accents, soft motion, practical local delivery content, and focused Angular routes. The homepage introduces the service quickly, while the Track Package, Services, Locations, Reviews, and Contact pages give the demo enough depth without over-engineering the product.',
+      features: [
+        'Local Delivery Homepage',
+        'Package Tracking Flow',
+        'Routed Service Pages'
+      ],
+      techStack: {
+        frontend: ['Angular', 'TypeScript', 'Tailwind CSS'],
+        backend: ['Static demo routes'],
+        other: ['Unicons', 'Responsive Images', 'Vercel Deployment']
+      },
+      targetUsers: ['Local Shops', 'Home Customers', 'Small Offices', 'Town Dispatch Teams'],
+      stats: {
+        performance: 'Static Fast',
+        dataLatency: 'Client Demo',
+        liveStatus: 'Operational'
+      },
+      detailSections: [
+        {
+          title: 'Project Context',
+          items: [
+            'Built as a demo delivery service website for a local business operating mainly inside town.',
+            'The content was adjusted away from heavy international freight language and toward everyday local deliveries.',
+            'The visual direction keeps the white background from the reference, but makes the finished site feel fuller, more premium, and more professional.'
+          ]
+        },
+        {
+          title: 'Homepage Experience',
+          items: [
+            'Hero section with the Bankar navbar, orange active state, pickup and destination inputs, search action, delivery stats, and a large logistics image composition.',
+            'Town Delivery Services section focused on motorbike dispatch and car delivery using the provided local vehicle images.',
+            'Local business section for store pickups, home drop-offs, and errand runs.',
+            'Simple how-it-works steps covering booking the pickup, dispatching a rider, and tracking the drop-off.',
+            'Local coverage section for retail shops, offices, food vendors, homes, pharmacies, and documents.',
+            'Final call-to-action and footer to make the page feel like a complete client-facing website.'
+          ]
+        },
+        {
+          title: 'Navigation & Routes',
+          items: [
+            'Navbar includes Home, Track Package, Services, Locations, Reviews, and Contact us.',
+            'Footer was moved into the router shell so it appears consistently on every screen.',
+            'Routes were created for the main demo pages instead of keeping everything as one empty placeholder section.',
+            'Active navigation styling helps users understand which page they are viewing.'
+          ]
+        },
+        {
+          title: 'Track Package Page',
+          items: [
+            'Precise tracking content that explains how customers can check a package or waybill number.',
+            'Styled form area for tracking code or phone number input.',
+            'Beautiful status presentation with delivery progress, current status, and simple timeline content.',
+            'Designed as a demo flow without adding unnecessary backend complexity.'
+          ]
+        },
+        {
+          title: 'Services Page',
+          items: [
+            'Service content was refocused around local dispatch instead of air and sea shipping.',
+            'Includes motorbike dispatch, car delivery, shop pickups, document runs, and scheduled business routes.',
+            'The service cards use local delivery language that fits shops, homes, offices, vendors, and customers inside town.'
+          ]
+        },
+        {
+          title: 'Locations Page',
+          items: [
+            'Locations content presents town coverage and nearby delivery areas instead of global freight coverage.',
+            'Designed to communicate where the business can pick up, drop off, and support repeated delivery routes.',
+            'Keeps the section visually clean so a small business can understand the service area quickly.'
+          ]
+        },
+        {
+          title: 'Reviews Page',
+          items: [
+            'Review content gives the demo social proof through customer-style feedback.',
+            'The page supports a local service story: fast pickup, clear updates, careful handling, and reliable delivery.',
+            'Designed to make the delivery company feel trustworthy even in a lightweight demo.'
+          ]
+        },
+        {
+          title: 'Contact Page',
+          items: [
+            'Contact page gives customers a direct way to request delivery support, business pickup help, or urgent errand runs.',
+            'Includes concise contact content for phone, email, hours, and service enquiries.',
+            'The design keeps the call to action clear without turning the demo into a complex booking system.'
+          ]
+        },
+        {
+          title: 'Design Direction',
+          items: [
+            'Maintained a bright white background while adding depth through image cards, soft shadows, orange accents, and subtle animated entrances.',
+            'Reduced the hero font weight and adjusted the hero line height so the typography feels lighter and more polished.',
+            'Used the Unicons globe icon in the hero headline treatment as requested.',
+            'Kept the content simple, client-friendly, and focused on the delivery business instead of overbuilding features.'
+          ]
+        },
+        {
+          title: 'Build & Deployment',
+          items: [
+            'Prepared as an Angular single-page application with routed pages and reusable layout areas.',
+            'Tailwind CSS was part of the styling setup for utility-led design work.',
+            'Vercel was used for the live demo deployment.',
+            'The package setup was cleaned up after dependency and JSON parsing issues appeared during build troubleshooting.'
+          ]
+        }
+      ],
+      plannedFeatures: [
+        {
+          title: 'Customer Flow',
+          items: [
+            'Connect the tracking form to real package status data.',
+            'Add booking request submission for pickup and drop-off details.',
+            'Send SMS or WhatsApp updates when delivery status changes.'
+          ]
+        },
+        {
+          title: 'Business Operations',
+          items: [
+            'Add a small admin area for managing pickups, riders, routes, and completed deliveries.',
+            'Support recurring shop pickups for vendors and offices.',
+            'Add delivery pricing rules based on distance, urgency, and package type.'
+          ]
+        },
+        {
+          title: 'Local Growth',
+          items: [
+            'Add neighborhood coverage filters and service availability by area.',
+            'Add customer reviews collected from completed deliveries.',
+            'Add business account pages for regular local clients.'
+          ]
+        }
+      ]
+    },
+    {
       id: '1',
       title: 'HealthPulse',
       shortDescription: 'A full-stack health content and e-commerce platform with blogs, products, accounts, comments, sharing, and checkout.',
